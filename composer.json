@@ -1,6 +1,6 @@
 {
     "name": "kyle-noland/laravel-helper",
-    "description": "",
+    "description": "Helper functions to use in your Laravel project",
     "authors": [
         {
             "name": "Kyle Noland",

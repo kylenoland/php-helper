@@ -22,6 +22,16 @@ class PHPHelperServiceProvider extends ServiceProvider {
 	}
 
 	/**
+	 * Boot the service provider
+	 *
+	 * @return void
+	 */
+	public function boot()
+	{
+		$this->package('KyleNoland/PHPHelper');
+	}
+
+	/**
 	 * Get the services provided by the provider.
 	 *
 	 * @return array

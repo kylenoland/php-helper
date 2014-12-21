@@ -1,8 +1,8 @@
-<?php namespace KyleNoland\LaravelHelper;
+<?php namespace KyleNoland\PHPHelper;
 
 use Illuminate\Support\ServiceProvider;
 
-class LaravelHelperServiceProvider extends ServiceProvider {
+class PHPHelperServiceProvider extends ServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.

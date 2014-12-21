@@ -1,6 +1,6 @@
 {
-    "name": "kyle-noland/laravel-helper",
-    "description": "Helper functions to use in your Laravel project",
+    "name": "kyle-noland/php-helper",
+    "description": "Helper functions to use in your PHP projects",
     "authors": [
         {
             "name": "Kyle Noland",
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-0": {
-            "KyleNoland\\LaravelHelper": "src/"
+            "KyleNoland\\PHPHelper": "src/"
         }
     },
     "minimum-stability": "stable"

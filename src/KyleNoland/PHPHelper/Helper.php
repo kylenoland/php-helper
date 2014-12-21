@@ -1,4 +1,4 @@
-<?php namespace KyleNoland\LaravelHelper;
+<?php namespace KyleNoland\PHPHelper;
 
 use DateInterval;
 use DateTime;

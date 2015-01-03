@@ -18,7 +18,10 @@ class PHPHelperServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		//
+		$this->app->bind('phphelper', function()
+		{
+			return new PHPHelper;
+		});
 	}
 
 	/**
@@ -28,17 +31,7 @@ class PHPHelperServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('KyleNoland/PHPHelper');
-	}
-
-	/**
-	 * Get the services provided by the provider.
-	 *
-	 * @return array
-	 */
-	public function provides()
-	{
-		return array();
+		$this->package('kylenoland/phphelper');
 	}
 
 }

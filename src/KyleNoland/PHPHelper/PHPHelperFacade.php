@@ -6,6 +6,6 @@ class PHPHelperFacade extends Facade
 {
 	protected static function getFacadeAccessor()
 	{
-		return 'PHPHelper';
+		return 'phphelper';
 	}
 }

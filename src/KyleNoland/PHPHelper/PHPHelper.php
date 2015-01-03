@@ -3,7 +3,7 @@
 use DateInterval;
 use DateTime;
 
-class Helper
+class PHPHelper
 {
 	/**
 	 * Format and dump data then die

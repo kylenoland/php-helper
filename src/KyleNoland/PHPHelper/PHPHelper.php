@@ -40,6 +40,27 @@ class PHPHelper
 
 
 	/**
+	 * Generate a basic pseudo-random password string
+	 *
+	 * @param int $length
+	 *
+	 * @return string
+	 */
+	public static function randomPassword($length = 8)
+	{
+    	$charset = "abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    	$password = "";
+
+    	for($i = 0, $n = strlen($charset); $i < $length; ++$i)
+		{
+			$password .= $charset[floor(rand() * $n)];
+		}
+
+    	return $password;
+	}
+
+
+	/**
 	 * Format and dump data then die
 	 *
 	 * @param $data

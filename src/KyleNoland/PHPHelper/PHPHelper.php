@@ -6,6 +6,40 @@ use DateTime;
 class PHPHelper
 {
 	/**
+	 * Get a subset of elements in the $data array that share the specified key prefix
+	 *
+	 * @param array  $data
+	 * @param string $prefix
+	 * @param bool   $maintainPrefix
+	 *
+	 * @return array
+	 */
+	public static function subsetByPrefix(array $data, $prefix, $maintainPrefix = false)
+	{
+		$arr = array();
+
+		foreach($data as $key => $value)
+		{
+			$segments = explode('_', $key);
+
+			if($segments[0] == $prefix)
+			{
+				if( ! $maintainPrefix)
+				{
+					$arr[str_replace($prefix . '_', '', $key)] = $value;
+				}
+				else
+				{
+					$arr[$key] = $value;
+				}
+			}
+		}
+
+		return $arr;
+	}
+
+
+	/**
 	 * Format and dump data then die
 	 *
 	 * @param $data

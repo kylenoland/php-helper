@@ -53,7 +53,7 @@ class PHPHelper
 
     	for($i = 0, $n = strlen($charset); $i < $length; ++$i)
 		{
-			$password .= $charset[floor(rand() * $n)];
+			$password .= $charset[rand(0, $n - 1)];
 		}
 
     	return $password;

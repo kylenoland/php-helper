@@ -117,12 +117,55 @@ class PHPHelper
 	 *
 	 * @return int
 	 */
-	public static function weekdaysBetween(DateTime $start, DateTime $end = null)
+	public static function weekdaysBetween(DateTime $start, DateTime $end)
 	{
-		if(is_null($end))
+		$days  = 0;
+
+		// Count the number of weekdays between $start and $end
+		while($start->diff($end)->d > 0)
 		{
-			$end = new DateTime(); // Today
+			$days += $start->format('N') < 6 ? 1 : 0;
+			$start = $start->add(new DateInterval('P1D'));
 		}
+
+		return $days;
+	}
+
+
+	/**
+	 * Calculate the number of week days since some arbitrary date
+	 *
+	 * @param DateTime $start
+	 *
+	 * @return int
+	 */
+	public static function weekdaysSince(DateTime $start)
+	{
+		$end = new DateTime(); // Today
+
+		$days  = 0;
+
+		// Count the number of weekdays between $start and $end
+		while($start->diff($end)->d > 0)
+		{
+			$days += $start->format('N') < 6 ? 1 : 0;
+			$start = $start->add(new DateInterval('P1D'));
+		}
+
+		return $days;
+	}
+
+
+	/**
+	 * Calculate the number of week days until some arbitrary date
+	 *
+	 * @param DateTime $end
+	 *
+	 * @return int
+	 */
+	public static function weekdaysUntil(DateTime $end)
+	{
+		$start = new DateTime(); // Today
 
 		$days  = 0;
 
@@ -170,7 +213,7 @@ class PHPHelper
 	 *
 	 * @return string
 	 */
-	public static function format_phone($num)
+	public static function formatPhone($num)
 	{
 		$num = static::stripNonNumeric($num);
 

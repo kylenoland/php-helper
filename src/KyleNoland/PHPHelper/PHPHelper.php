@@ -2,6 +2,7 @@
 
 use DateInterval;
 use DateTime;
+use InvalidArgumentException;
 
 class PHPHelper
 {
@@ -143,6 +144,17 @@ class PHPHelper
 	{
 		$end = new DateTime(); // Today
 
+		//
+		// Sanity check. Asking for the weekdays since a given date doesn't make sense if the start
+		// date is in the future.
+		//
+
+		if($start > $end)
+		{
+			throw new InvalidArgumentException('The start date cannot be in the future. ' .
+				$start->format('Y-m-d H:i:s') . ' given.');
+		}
+
 		$days  = 0;
 
 		// Count the number of weekdays between $start and $end
@@ -166,6 +178,17 @@ class PHPHelper
 	public static function weekdaysUntil(DateTime $end)
 	{
 		$start = new DateTime(); // Today
+
+		//
+		// Sanity check. Asking for the weekdays until a given date doesn't make sense if the end
+		// date is in the past.
+		//
+
+		if($start > $end)
+		{
+			throw new InvalidArgumentException('The end date cannot be in the past. ' .
+				$end->format('Y-m-d H:i:s') . ' given.');
+		}
 
 		$days  = 0;
 

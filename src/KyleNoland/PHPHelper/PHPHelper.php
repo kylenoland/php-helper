@@ -169,6 +169,34 @@ class PHPHelper
 
 
 	/**
+	 * Determine if the specified date is in the future
+	 *
+	 * @param DateTime $date
+	 *
+	 * @return bool
+	 */
+	public static function isInFuture(DateTime $date)
+	{
+		$today = new DateTime();
+
+		return $today < $date;
+	}
+
+
+	/**
+	 * Determine if the specified date is in the past
+	 *
+	 * @param DateTime $date
+	 *
+	 * @return bool
+	 */
+	public static function isInPast(DateTime $date)
+	{
+		return ! static::isInFuture($date);
+	}
+
+
+	/**
 	 * Calculate the number of week days until some arbitrary date
 	 *
 	 * @param DateTime $end

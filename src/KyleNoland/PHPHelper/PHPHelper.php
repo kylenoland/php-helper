@@ -62,6 +62,19 @@ class PHPHelper
 
 
 	/**
+	 * Simple probability generator
+	 * 
+	 * @param $probability
+	 *
+	 * @return bool
+	 */
+	public static function probability($probability)
+	{
+		return rand(1, 100) <= $probability;
+	}
+
+
+	/**
 	 * Format and dump data then die
 	 *
 	 * @param $data

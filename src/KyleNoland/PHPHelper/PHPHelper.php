@@ -63,7 +63,7 @@ class PHPHelper
 
 	/**
 	 * Simple probability generator
-	 * 
+	 *
 	 * @param $probability
 	 *
 	 * @return bool

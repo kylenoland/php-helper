@@ -31,7 +31,7 @@ class PHPHelperServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('kylenoland/phphelper');
+
 	}
 
 }

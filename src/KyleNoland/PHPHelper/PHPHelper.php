@@ -129,7 +129,7 @@ class PHPHelper
 
 			if($withName)
 			{
-				$months[$i] .= ', ' . jdmonthname($i, 0);
+				$months[$i] .= ' (' . jdmonthname($i, 0) . ')';
 			}
 		}
 

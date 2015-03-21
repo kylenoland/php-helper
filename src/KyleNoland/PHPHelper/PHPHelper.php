@@ -113,6 +113,54 @@ class PHPHelper
 
 
 	/**
+	 * Get an array of months suitable for use in a drop down menu
+	 *
+	 * @param bool $withName
+	 *
+	 * @return array
+	 */
+	public function getExpMonths($withName = false)
+	{
+		$months = array();
+
+		for($i = 1; $i <= 12; $i++)
+		{
+			$months[$i] = $i;
+
+			if($withName)
+			{
+				$months[$i] .= ', ' . jdmonthname($i, 0);
+			}
+		}
+
+		return $months;
+	}
+
+
+	/**
+	 * Get an array of years suitable for use in a drop down menu
+	 *
+	 * @param int $num
+	 *
+	 * @return array
+	 */
+	public function getExpYears($num = 10)
+	{
+		$years = array();
+
+		$currentYear = date('Y');
+		$lastYear	 = $currentYear + $num;
+
+		for($i = $currentYear; $i <= $lastYear; $i++)
+		{
+			$years[$i] = $i;
+		}
+
+		return $years;
+	}
+
+
+	/**
 	 * Get REMOTE_ADDR attribute of the user agent
 	 *
 	 * @return string

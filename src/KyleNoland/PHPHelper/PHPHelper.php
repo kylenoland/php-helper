@@ -119,7 +119,7 @@ class PHPHelper
 	 *
 	 * @return array
 	 */
-	public function getExpMonths($withName = false)
+	public static function getExpMonths($withName = false)
 	{
 		$months = array();
 
@@ -144,7 +144,7 @@ class PHPHelper
 	 *
 	 * @return array
 	 */
-	public function getExpYears($num = 10)
+	public static function getExpYears($num = 10)
 	{
 		$years = array();
 
@@ -401,11 +401,29 @@ class PHPHelper
 
 
 	/**
+	 * Get the fractional portion of a number
+	 *
+	 * @param $num
+	 *
+	 * @return float
+	 */
+	public static function getFraction($num)
+	{
+		if( ! is_numeric($num))
+		{
+			throw new InvalidArgumentException("The getFraction method expects a numeric argument. $num given.");
+		}
+
+		return $num - floor($num);
+	}
+
+
+	/**
 	 * Get an array of US states and their abbreviations
 	 *
 	 * @return array
 	 */
-	function getUsStates($placeholder = false)
+	public static function getUsStates($placeholder = false)
 	{
 		$states = array();
 

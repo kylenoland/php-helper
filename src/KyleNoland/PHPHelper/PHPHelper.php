@@ -403,7 +403,7 @@ class PHPHelper
 	/**
 	 * Get the fractional portion of a number
 	 *
-	 * @param $num
+	 * @param float $num
 	 *
 	 * @return float
 	 */

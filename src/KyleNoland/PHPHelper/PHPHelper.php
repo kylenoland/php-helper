@@ -7,6 +7,30 @@ use InvalidArgumentException;
 class PHPHelper {
 
 	/**
+	 * Convert a decimal number to its percentage equivalent
+	 *
+	 * @param $decimal
+	 *
+	 * @return float
+	 */
+	public static function decimalToPercent($decimal)
+	{
+		return $decimal * 100;
+	}
+
+	/**
+	 * Convert a percent number to its decimal equivalent
+	 *
+	 * @param $decimal
+	 *
+	 * @return float
+	 */
+	public static function percentToDecimal($decimal)
+	{
+		return $decimal / 100;
+	}
+
+	/**
 	 * Get a subset of elements in the $data array that share the specified key prefix
 	 *
 	 * @param array  $data

@@ -4,8 +4,8 @@ use DateInterval;
 use DateTime;
 use InvalidArgumentException;
 
-class PHPHelper
-{
+class PHPHelper {
+
 	/**
 	 * Get a subset of elements in the $data array that share the specified key prefix
 	 *
@@ -37,6 +37,22 @@ class PHPHelper
 		}
 
 		return $arr;
+	}
+
+
+	/**
+	 * Format a floating point number with a minimum level of precision but no maximum
+	 *
+	 * @param float $number
+	 * @param int   $precision
+	 *
+	 * @return string
+	 */
+	public static function minPrecision($number, $precision)
+	{
+		$e = pow(10, $precision);
+
+		return floor($number * $e) == $number * $e ? sprintf("%.${precision}f", $number) : $number;
 	}
 
 

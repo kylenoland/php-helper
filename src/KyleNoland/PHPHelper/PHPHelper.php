@@ -212,6 +212,32 @@ class PHPHelper {
 
 
 	/**
+	 * Convert inches to yards
+	 *
+	 * @param float $inches
+	 *
+	 * @return float
+	 */
+	public static function inchesToYards($inches)
+	{
+		return $inches / 36.0;
+	}
+
+
+	/**
+	 * Convert yards to inches
+	 *
+	 * @param float $yards
+	 *
+	 * @return float
+	 */
+	public static function yardsToInches($yards)
+	{
+		return $yards * 36.0;
+	}
+
+
+	/**
 	 * Calculate the number of week days between two arbitrary dates
 	 *
 	 * @param DateTime $start

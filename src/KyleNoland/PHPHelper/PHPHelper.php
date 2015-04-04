@@ -261,6 +261,32 @@ class PHPHelper {
 
 
 	/**
+	 * Is the number even
+	 *
+	 * @param float $num
+	 *
+	 * @return bool
+	 */
+	public static function isEven($num)
+	{
+		return $num % 2 == 0;
+	}
+
+
+	/**
+	 * Is the number odd
+	 * 
+	 * @param float $num
+	 *
+	 * @return bool
+	 */
+	public static function isOdd($num)
+	{
+		return $num % 2 != 0;
+	}
+
+
+	/**
 	 * Calculate the number of week days since some arbitrary date
 	 *
 	 * @param DateTime $start

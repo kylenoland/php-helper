@@ -287,6 +287,27 @@ class PHPHelper {
 
 
 	/**
+	 * Determine if the given array is a non-jagged multidimensional array
+	 * 
+	 * @param array $array
+	 *
+	 * @return bool
+	 */
+	public static function isMultidimensional(array $array)
+	{
+		foreach($array as $candidate)
+		{
+			if( ! is_array($candidate))
+			{
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+
+	/**
 	 * Calculate the number of week days since some arbitrary date
 	 *
 	 * @param DateTime $start

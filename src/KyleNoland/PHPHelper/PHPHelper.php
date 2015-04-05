@@ -275,7 +275,7 @@ class PHPHelper {
 
 	/**
 	 * Is the number odd
-	 * 
+	 *
 	 * @param float $num
 	 *
 	 * @return bool

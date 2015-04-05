@@ -7,6 +7,20 @@ use InvalidArgumentException;
 class PHPHelper {
 
 	/**
+	 * Rename an array key
+	 * 
+	 * @param array  $array
+	 * @param string $original
+	 * @param string $new
+	 */
+	public static function arrayKeyRename(array & $array, $original, $new)
+	{
+		$array[$new] = $array[$original];
+		unset($array[$original]);
+	}
+
+
+	/**
 	 * Convert a decimal number to its percentage equivalent
 	 *
 	 * @param $decimal
@@ -288,7 +302,7 @@ class PHPHelper {
 
 	/**
 	 * Determine if the given array is a non-jagged multidimensional array
-	 * 
+	 *
 	 * @param array $array
 	 *
 	 * @return bool

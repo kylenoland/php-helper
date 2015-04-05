@@ -8,7 +8,7 @@ class PHPHelper {
 
 	/**
 	 * Rename an array key
-	 * 
+	 *
 	 * @param array  $array
 	 * @param string $original
 	 * @param string $new

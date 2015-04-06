@@ -541,7 +541,7 @@ class PHPHelper {
 			throw new InvalidArgumentException("The getFraction method expects a numeric argument. $num given.");
 		}
 
-		return $num - floor($num);
+		return bcsub(abs($num), floor(abs($num)),20);
 	}
 
 

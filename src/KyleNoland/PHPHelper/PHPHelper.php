@@ -183,7 +183,7 @@ class PHPHelper {
 
 			if($withName)
 			{
-				$months[$i] .= ' (' . jdmonthname($i, 0) . ')';
+				$months[$i] = $months[$i] . ' (' . jdmonthname($i, 0) . ')';
 			}
 		}
 
@@ -541,7 +541,7 @@ class PHPHelper {
 			throw new InvalidArgumentException("The getFraction method expects a numeric argument. $num given.");
 		}
 
-		return bcsub(abs($num), floor(abs($num)),20);
+		return bcsub(abs($num),floor(abs($num)),20);
 	}
 
 
